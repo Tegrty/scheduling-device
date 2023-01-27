@@ -32,17 +32,15 @@ $(function () {
     hourSixteen,
     hourSeventeen,
   ]
-
-  for (let i = 0; i < hourList.length; i++) {
+// If statement inside of a loop to match time with 
+  for (let i = 9; i < hourList.length; i++) {
     if (dayjs().hour() == [i]) {
-    console.log('present')
-      // hourList[i].setAttribute('class', "present");
+    hourList[i].setAttribute('style', 'background-color: #ff6961');
   } else if (dayjs().hour() > [i]) {
-      console.log('past')
-      // hourList[i].setAttribute('class', "past");
+    console.log('past');
+    hourList[i].setAttribute('style', 'background-color: #d3d3d3')
     } else {
-      console.log('future');
-      // hourList[i].setAttribute('class', "future");
+      hourList[i].setAttribute('style', 'background-color: #77dd77');
     };
   };
 
