@@ -11,6 +11,7 @@ $(function () {
   const hourFifteen = document.getElementById('hour-15');
   const hourSixteen = document.getElementById('hour-16');
   const hourSeventeen = document.getElementById('hour-17');
+  const saveBtn = document.querySelectorAll('.btn');
 
   let hourList = [
     "",
@@ -43,6 +44,15 @@ $(function () {
       hourList[i].setAttribute('style', 'background-color: #77dd77');
     };
   };
+// function to save content to local storage
+  $( saveBtn ).click(function() {
+        // Get nearby values of the description in JQuery
+        let text = $(this).siblings(".description").val();
+        let time = $(this).parent().attr("id");
+        // Save text in local storage
+        localStorage.setItem(time, text);
+  });
+
 
 
 
